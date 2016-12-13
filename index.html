@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="apple-mobile-web-app-capable" content="YES"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="fragment" content="!" />
+    <base href="./">
+    <script src="jspm_packages/system.src.js"></script>
+    <script>System.packageWithIndex = true;</script>
+    <script src="config.js"></script>
+    <link rel="stylesheet" href="jspm_packages/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="app/style.css" type="text/css" media="all" />
+  </head>
+
+  <body>
+    <dm-app>Loading ...</dm-app>
+    <script>
+      System.trace = true
+      System.import("app")
+        .then(function() {
+          console.log('running');
+        })
+        .catch(function(err) {
+          console.log(err);
+          console.log(err.originalErr);
+        });
+    </script>
+  </body>
+</html>

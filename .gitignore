@@ -1,0 +1,18 @@
+*.log
+/coverage
+/node_modules
+/jspm_packages
+/typings
+/dist
+/dist-app
+
+#vim
+.*.*.*.swp
+.*.*.swp
+.*.swp
+.*.*.*.swo
+.*.*.swo
+.*.swo
+
+# yarn
+yarn.lock
