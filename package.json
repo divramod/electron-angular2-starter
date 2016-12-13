@@ -26,7 +26,7 @@
     "dependencies": {
       "@angular/forms": "npm:@angular/forms@^2.2.4",
       "@angular/http": "npm:@angular/http@^2.2.4",
-      "@angular/material": "npm:@angular/material@^2.0.0-alpha.11-3",
+      "@angular/material": "npm:@angular/material@^2.0.0-alpha.10",
       "@angular/platform-browser-dynamic": "npm:@angular/platform-browser-dynamic@^2.2.0",
       "@angular/router": "npm:@angular/router@^3.2.4",
       "@ngrx/core": "npm:@ngrx/core@^1.2.0",

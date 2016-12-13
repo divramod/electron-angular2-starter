@@ -1,8 +1,3 @@
-/**
- * Applies styles for users in high contrast mode. Note that this only applies
- * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`
- * attribute, however Chrome handles high contrast differently.
- */
 .md-elevation-z0 {
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }
 
@@ -128,20 +123,13 @@
   text-transform: none;
   width: 1px; }
 
-.md-overlay-container, .md-global-overlay-wrapper {
+.md-overlay-container {
+  position: fixed;
   pointer-events: none;
   top: 0;
   left: 0;
   height: 100%;
-  width: 100%; }
-
-.md-overlay-container {
-  position: fixed;
-  z-index: 1000; }
-
-.md-global-overlay-wrapper {
-  display: flex;
-  position: absolute;
+  width: 100%;
   z-index: 1000; }
 
 .md-overlay-pane {
@@ -173,13 +161,13 @@
 .md-ripple-focused .md-ripple-background {
   background-color: rgba(255, 215, 64, 0.1); }
 
-[md-button].md-button-focus.md-primary .md-button-focus-overlay, [md-icon-button].md-button-focus.md-primary .md-button-focus-overlay, [md-raised-button].md-button-focus.md-primary .md-button-focus-overlay, [md-fab].md-button-focus.md-primary .md-button-focus-overlay, [md-mini-fab].md-button-focus.md-primary .md-button-focus-overlay {
+[md-button].md-button-focus.md-primary::after, [md-icon-button].md-button-focus.md-primary::after, [md-raised-button].md-button-focus.md-primary::after, [md-fab].md-button-focus.md-primary::after, [md-mini-fab].md-button-focus.md-primary::after {
   background-color: rgba(103, 58, 183, 0.12); }
 
-[md-button].md-button-focus.md-accent .md-button-focus-overlay, [md-icon-button].md-button-focus.md-accent .md-button-focus-overlay, [md-raised-button].md-button-focus.md-accent .md-button-focus-overlay, [md-fab].md-button-focus.md-accent .md-button-focus-overlay, [md-mini-fab].md-button-focus.md-accent .md-button-focus-overlay {
+[md-button].md-button-focus.md-accent::after, [md-icon-button].md-button-focus.md-accent::after, [md-raised-button].md-button-focus.md-accent::after, [md-fab].md-button-focus.md-accent::after, [md-mini-fab].md-button-focus.md-accent::after {
   background-color: rgba(255, 215, 64, 0.12); }
 
-[md-button].md-button-focus.md-warn .md-button-focus-overlay, [md-icon-button].md-button-focus.md-warn .md-button-focus-overlay, [md-raised-button].md-button-focus.md-warn .md-button-focus-overlay, [md-fab].md-button-focus.md-warn .md-button-focus-overlay, [md-mini-fab].md-button-focus.md-warn .md-button-focus-overlay {
+[md-button].md-button-focus.md-warn::after, [md-icon-button].md-button-focus.md-warn::after, [md-raised-button].md-button-focus.md-warn::after, [md-fab].md-button-focus.md-warn::after, [md-mini-fab].md-button-focus.md-warn::after {
   background-color: rgba(244, 67, 54, 0.12); }
 
 [md-button], [md-icon-button] {
@@ -192,11 +180,11 @@
     color: #f44336; }
   [md-button].md-primary[disabled], [md-button].md-accent[disabled], [md-button].md-warn[disabled], [md-button][disabled][disabled], [md-icon-button].md-primary[disabled], [md-icon-button].md-accent[disabled], [md-icon-button].md-warn[disabled], [md-icon-button][disabled][disabled] {
     color: rgba(0, 0, 0, 0.38); }
-  [md-button]:hover.md-primary .md-button-focus-overlay, [md-icon-button]:hover.md-primary .md-button-focus-overlay {
+  [md-button]:hover.md-primary::after, [md-icon-button]:hover.md-primary::after {
     background-color: rgba(103, 58, 183, 0.12); }
-  [md-button]:hover.md-accent .md-button-focus-overlay, [md-icon-button]:hover.md-accent .md-button-focus-overlay {
+  [md-button]:hover.md-accent::after, [md-icon-button]:hover.md-accent::after {
     background-color: rgba(255, 215, 64, 0.12); }
-  [md-button]:hover.md-warn .md-button-focus-overlay, [md-icon-button]:hover.md-warn .md-button-focus-overlay {
+  [md-button]:hover.md-warn::after, [md-icon-button]:hover.md-warn::after {
     background-color: rgba(244, 67, 54, 0.12); }
 
 [md-raised-button], [md-fab], [md-mini-fab] {
@@ -273,15 +261,6 @@ md-card-subtitle {
 
 md-dialog-container {
   background: white; }
-
-md-icon.md-primary {
-  color: #673ab7; }
-
-md-icon.md-accent {
-  color: #ffd740; }
-
-md-icon.md-warn {
-  color: #f44336; }
 
 .md-input-placeholder {
   color: rgba(0, 0, 0, 0.38); }
@@ -381,41 +360,6 @@ md-progress-circle[color='warn'] path, md-spinner[color='warn'] path {
   background-color: rgba(255, 215, 64, 0.26); }
   .md-radio-disabled .md-radio-ripple .md-ripple-foreground {
     background-color: rgba(0, 0, 0, 0.38); }
-
-.md-select-trigger {
-  color: rgba(0, 0, 0, 0.38);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
-  md-select:focus:not(.md-select-disabled) .md-select-trigger {
-    color: #673ab7;
-    border-bottom: 1px solid #673ab7; }
-  .ng-invalid.ng-touched:not(.md-select-disabled) .md-select-trigger {
-    color: #f44336;
-    border-bottom: 1px solid #f44336; }
-
-.md-select-arrow {
-  color: rgba(0, 0, 0, 0.38); }
-  md-select:focus:not(.md-select-disabled) .md-select-arrow {
-    color: #673ab7; }
-  .ng-invalid.ng-touched:not(.md-select-disabled) .md-select-arrow {
-    color: #f44336; }
-
-.md-select-content {
-  background: white; }
-
-.md-select-value {
-  color: rgba(0, 0, 0, 0.87); }
-  .md-select-disabled .md-select-value {
-    color: rgba(0, 0, 0, 0.38); }
-
-md-option:hover:not(.md-option-disabled), md-option:focus:not(.md-option-disabled) {
-  background: rgba(0, 0, 0, 0.04); }
-
-md-option.md-selected {
-  background: rgba(0, 0, 0, 0.04);
-  color: #673ab7; }
-
-md-option.md-option-disabled {
-  color: rgba(0, 0, 0, 0.38); }
 
 md-sidenav-layout {
   background-color: #fafafa;
@@ -522,13 +466,13 @@ md-toolbar {
 .m2app-dark .md-ripple-focused .md-ripple-background {
   background-color: rgba(176, 190, 197, 0.1); }
 
-.m2app-dark [md-button].md-button-focus.md-primary .md-button-focus-overlay, .m2app-dark [md-icon-button].md-button-focus.md-primary .md-button-focus-overlay, .m2app-dark [md-raised-button].md-button-focus.md-primary .md-button-focus-overlay, .m2app-dark [md-fab].md-button-focus.md-primary .md-button-focus-overlay, .m2app-dark [md-mini-fab].md-button-focus.md-primary .md-button-focus-overlay {
+.m2app-dark [md-button].md-button-focus.md-primary::after, .m2app-dark [md-icon-button].md-button-focus.md-primary::after, .m2app-dark [md-raised-button].md-button-focus.md-primary::after, .m2app-dark [md-fab].md-button-focus.md-primary::after, .m2app-dark [md-mini-fab].md-button-focus.md-primary::after {
   background-color: rgba(194, 24, 91, 0.12); }
 
-.m2app-dark [md-button].md-button-focus.md-accent .md-button-focus-overlay, .m2app-dark [md-icon-button].md-button-focus.md-accent .md-button-focus-overlay, .m2app-dark [md-raised-button].md-button-focus.md-accent .md-button-focus-overlay, .m2app-dark [md-fab].md-button-focus.md-accent .md-button-focus-overlay, .m2app-dark [md-mini-fab].md-button-focus.md-accent .md-button-focus-overlay {
+.m2app-dark [md-button].md-button-focus.md-accent::after, .m2app-dark [md-icon-button].md-button-focus.md-accent::after, .m2app-dark [md-raised-button].md-button-focus.md-accent::after, .m2app-dark [md-fab].md-button-focus.md-accent::after, .m2app-dark [md-mini-fab].md-button-focus.md-accent::after {
   background-color: rgba(176, 190, 197, 0.12); }
 
-.m2app-dark [md-button].md-button-focus.md-warn .md-button-focus-overlay, .m2app-dark [md-icon-button].md-button-focus.md-warn .md-button-focus-overlay, .m2app-dark [md-raised-button].md-button-focus.md-warn .md-button-focus-overlay, .m2app-dark [md-fab].md-button-focus.md-warn .md-button-focus-overlay, .m2app-dark [md-mini-fab].md-button-focus.md-warn .md-button-focus-overlay {
+.m2app-dark [md-button].md-button-focus.md-warn::after, .m2app-dark [md-icon-button].md-button-focus.md-warn::after, .m2app-dark [md-raised-button].md-button-focus.md-warn::after, .m2app-dark [md-fab].md-button-focus.md-warn::after, .m2app-dark [md-mini-fab].md-button-focus.md-warn::after {
   background-color: rgba(255, 87, 34, 0.12); }
 
 .m2app-dark [md-button], .m2app-dark [md-icon-button] {
@@ -541,11 +485,11 @@ md-toolbar {
     color: #ff5722; }
   .m2app-dark [md-button].md-primary[disabled], .m2app-dark [md-button].md-accent[disabled], .m2app-dark [md-button].md-warn[disabled], .m2app-dark [md-button][disabled][disabled], .m2app-dark [md-icon-button].md-primary[disabled], .m2app-dark [md-icon-button].md-accent[disabled], .m2app-dark [md-icon-button].md-warn[disabled], .m2app-dark [md-icon-button][disabled][disabled] {
     color: rgba(255, 255, 255, 0.3); }
-  .m2app-dark [md-button]:hover.md-primary .md-button-focus-overlay, .m2app-dark [md-icon-button]:hover.md-primary .md-button-focus-overlay {
+  .m2app-dark [md-button]:hover.md-primary::after, .m2app-dark [md-icon-button]:hover.md-primary::after {
     background-color: rgba(194, 24, 91, 0.12); }
-  .m2app-dark [md-button]:hover.md-accent .md-button-focus-overlay, .m2app-dark [md-icon-button]:hover.md-accent .md-button-focus-overlay {
+  .m2app-dark [md-button]:hover.md-accent::after, .m2app-dark [md-icon-button]:hover.md-accent::after {
     background-color: rgba(176, 190, 197, 0.12); }
-  .m2app-dark [md-button]:hover.md-warn .md-button-focus-overlay, .m2app-dark [md-icon-button]:hover.md-warn .md-button-focus-overlay {
+  .m2app-dark [md-button]:hover.md-warn::after, .m2app-dark [md-icon-button]:hover.md-warn::after {
     background-color: rgba(255, 87, 34, 0.12); }
 
 .m2app-dark [md-raised-button], .m2app-dark [md-fab], .m2app-dark [md-mini-fab] {
@@ -622,15 +566,6 @@ md-toolbar {
 
 .m2app-dark md-dialog-container {
   background: #424242; }
-
-.m2app-dark md-icon.md-primary {
-  color: #c2185b; }
-
-.m2app-dark md-icon.md-accent {
-  color: #b0bec5; }
-
-.m2app-dark md-icon.md-warn {
-  color: #ff5722; }
 
 .m2app-dark .md-input-placeholder {
   color: rgba(255, 255, 255, 0.3); }
@@ -730,41 +665,6 @@ md-toolbar {
   background-color: rgba(176, 190, 197, 0.26); }
   .md-radio-disabled .m2app-dark .md-radio-ripple .md-ripple-foreground {
     background-color: rgba(255, 255, 255, 0.3); }
-
-.m2app-dark .md-select-trigger {
-  color: rgba(255, 255, 255, 0.3);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
-  md-select:focus:not(.md-select-disabled) .m2app-dark .md-select-trigger {
-    color: #c2185b;
-    border-bottom: 1px solid #c2185b; }
-  .ng-invalid.ng-touched:not(.md-select-disabled) .m2app-dark .md-select-trigger {
-    color: #ff5722;
-    border-bottom: 1px solid #ff5722; }
-
-.m2app-dark .md-select-arrow {
-  color: rgba(255, 255, 255, 0.3); }
-  md-select:focus:not(.md-select-disabled) .m2app-dark .md-select-arrow {
-    color: #c2185b; }
-  .ng-invalid.ng-touched:not(.md-select-disabled) .m2app-dark .md-select-arrow {
-    color: #ff5722; }
-
-.m2app-dark .md-select-content {
-  background: #424242; }
-
-.m2app-dark .md-select-value {
-  color: white; }
-  .md-select-disabled .m2app-dark .md-select-value {
-    color: rgba(255, 255, 255, 0.3); }
-
-.m2app-dark md-option:hover:not(.md-option-disabled), .m2app-dark md-option:focus:not(.md-option-disabled) {
-  background: rgba(255, 255, 255, 0.04); }
-
-.m2app-dark md-option.md-selected {
-  background: rgba(255, 255, 255, 0.04);
-  color: #c2185b; }
-
-.m2app-dark md-option.md-option-disabled {
-  color: rgba(255, 255, 255, 0.3); }
 
 .m2app-dark md-sidenav-layout {
   background-color: #303030;
