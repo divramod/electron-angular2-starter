@@ -1,8 +1,8 @@
 {
   "scripts": {
-    "start": "npm run sass && ./node_modules/.bin/concurrently \"npm run electron\" \"npm run hmr\" \"npm run sass:watch\" ",
+    "start": "npm run sass && ./node_modules/.bin/concurrently \"npm run electron\" \"npm run hmr:server\" \"npm run sass:watch\" ",
     "electron": "electron electron.js",
-    "hmr": "./node_modules/.bin/chokidar-socket-emitter",
+    "hmr:server": "./node_modules/.bin/chokidar-socket-emitter",
     "postinstall": "./node_modules/.bin/jspm install",
     "sass": "./node_modules/.bin/node-sass -r app -o app",
     "sass:watch": "npm run sass && ./node_modules/.bin/node-sass -w -r app -o app "

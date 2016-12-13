@@ -29,25 +29,33 @@
 - [ ] [ng2-formly](https://github.com/formly-js/ng2-formly)
 - [ ] implement [Angular2 Styleguide](https://angular.io/styleguide)
 
+# Use in your Project
+- TODO
+
 # Scripts
 
 ## get started
 
 ```bash
-# install dependencies
-npm install #postinstalls jspm dependencies
+# npm install
+# - install dependencies
+# - postinstall jspm dependencies
+npm install
 ```
 
 ## development
 ```bash
-# start
+# npm start
+# - (1) starts the electron app
+# - (2) starts chokidar-socket-emitter for hmr
+# - (3) starts sass compiler (with watch) for compiling scss-files to css
 npm start
 ```
 
-# filestructure
+# FILESTRUCTURE
 ```bash
 package.json
-config.js (systemjs config file)
+config.js       # systemjs config file
 ```
 
 # Changelog
