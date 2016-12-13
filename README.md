@@ -1,8 +1,10 @@
-# ng2-electron
+# electron-angular2-starter
+
+## description
 - this is a starter for electron apps using Angular2
 - it is also used as learning project
 
-## Inpired by
+## inpired by
 - [Angular2 styleguide](https://angular.io/docs/ts/latest/guide/style-guide.html)
 - [Angular2 Architecture](https://angular.io/docs/ts/latest/guide/architecture.html)
 - [ngrx/sample-app](https://github.com/ngrx/example-app)
@@ -10,9 +12,9 @@
 - [great-big-angular2-example](https://github.com/dancancro/great-big-angular2-example)
 - [Material2 Demo App](https://github.com/angular/material2/tree/master/src/demo-app)
 
-# Features
+# FEATURES
 
-## DONE
+## done
 - [x] [Typescript](https://www.typescriptlang.org/)
 - [x] [SystemJs](https://github.com/systemjs/systemjs)
 - [x] [Angular2](https://angular.io/)
@@ -23,16 +25,16 @@
 - [x] [jspm](http://jspm.io)
 
 
-## TODO
+## todo
 - [ ] [SystemJs Hot Module Reloading](https://github.com/capaj/systemjs-hot-reloader)
 - [ ] [@ngrx/devtools](https://github.com/ngrx/store-devtools)
 - [ ] [ng2-formly](https://github.com/formly-js/ng2-formly)
 - [ ] implement [Angular2 Styleguide](https://angular.io/styleguide)
 
-# Use in your Project
+# USE IN YOUR PROJECT
 - TODO
 
-# Scripts
+# SCRIPTS
 
 ## get started
 
@@ -58,7 +60,7 @@ package.json
 config.js       # systemjs config file
 ```
 
-# Changelog
+# CHANGELOG
 
 ## v0.0.1
 - [x] [Typescript](https://www.typescriptlang.org/)
