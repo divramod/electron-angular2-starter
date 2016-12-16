@@ -1,56 +1,40 @@
 {
-    "compileOnSave": true,
-    "compilerOptions": {
-        "target": "es2015",
-        "module": "commonjs",
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "rootDir": ".",
-        "baseUrl": ".",
-        "paths": {
-            "@angular/core": [
-                "jspm_packages/npm/@angular/core@2.2.4"
-            ],
-            "@angular/compiler": [
-                "jspm_packages/npm/@angular/compiler@2.2.4"
-            ],
-            "@angular/common": [
-                "jspm_packages/npm/@angular/common@2.2.4"
-            ],
-            "@angular/forms": [
-                "jspm_packages/npm/@angular/forms@2.2.4"
-            ],
-            "@angular/http": [
-                "jspm_packages/npm/@angular/http@2.2.4"
-            ],
-            "@angular/material": [
-                "jspm_packages/npm/@angular/material@2.0.0-alpha.10"
-            ],
-            "@angular/platform-browser-dynamic": [
-                "jspm_packages/npm/@angular/platform-browser-dynamic@2.2.4"
-            ],
-            "@angular/platform-browser": [
-                "jspm_packages/npm/@angular/platform-browser@2.2.4"
-            ],
-            "@angular/router": [
-                "jspm_packages/npm/@angular/router@3.2.4"
-            ],
-            "@ngrx/core": [
-                "jspm_packages/npm/@ngrx/core@1.2.0"
-            ],
-            "@ngrx/store": [
-                "jspm_packages/npm/@ngrx/store@2.2.1"
-            ],
-            "@types/hammerjs": [
-                "node_modules/@types/hammerjs"
-            ],
-            "rxjs/*": [
-                "jspm_packages/npm/rxjs@5.0.0-beta.12/*"
-            ]
-        }
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "noEmitHelpers": true,
+    "strictNullChecks": false,
+    "baseUrl": "./src",
+    "paths": {
     },
-    "files": [
-        "./app/app.module.ts",
-        "./app/_references.d.ts"
+    "lib": [
+      "dom",
+      "es6"
+    ],
+    "types": [
+      "hammerjs",
+      "jasmine",
+      "node",
+      "selenium-webdriver",
+      "source-map",
+      "uglify-js",
+      "webpack"
     ]
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "forkChecker": true,
+    "useWebpackText": true
+  },
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "atom": { "rewriteTsconfig": false }
 }
