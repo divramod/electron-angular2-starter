@@ -1,163 +1,39 @@
 {
   "scripts": {
-    "start": "npm run sass && ./node_modules/.bin/concurrently \"npm run electron\" \"npm run hmr:server\" \"npm run sass:watch\" ",
+    "start": "npm run material:clean && npm run sass && ./node_modules/.bin/concurrently \"npm run electron\" \"npm run hmr:server\" \"npm run sass:watch\" ",
     "electron": "electron electron.js",
     "hmr:server": "./node_modules/.bin/chokidar-socket-emitter",
-    "postinstall": "./node_modules/.bin/jspm install",
+    "material:clean": "find node_modules/@angular/material -name \"*.css\" -type f -delete",
     "sass": "./node_modules/.bin/node-sass -r app -o app",
     "sass:watch": "npm run sass && ./node_modules/.bin/node-sass -w -r app -o app "
   },
+  "dependencies": {
+    "@angular/forms": "^2.3.0",
+    "@angular/http": "^2.3.0",
+    "@angular/material": "^2.0.0-alpha.11-3",
+    "@angular/platform-browser": "^2.3.0",
+    "@angular/platform-browser-dynamic": "^2.3.0",
+    "@angular/router": "^3.3.0",
+    "@ngrx/core": "^1.2.0",
+    "@ngrx/store": "^2.2.1",
+    "font-awesome": "^4.7.0",
+    "hammerjs": "^2.0.8",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "^5.0.1"
+  },
   "devDependencies": {
+    "@types/hammerjs": "^2.0.33",
     "chokidar-socket-emitter": "^0.5.4",
+    "clean-css": "^3.4.22",
     "concurrently": "^3.1.0",
     "electron": "^1.4.10",
-    "electron-connect": "^0.6.1",
-    "electron-reload": "^1.0.3",
     "gulp": "^3.9.1",
-    "jspm": "^0.16.48",
     "node-sass": "^3.13.0",
-    "system-live-reload": "^1.5.3",
-    "system-trace": "^0.2.7"
-  },
-  "jspm": {
-    "registry": "github",
-    "dependencies": {
-      "@angular/forms": "npm:@angular/forms@^2.2.4",
-      "@angular/http": "npm:@angular/http@^2.2.4",
-      "@angular/material": "npm:@angular/material@^2.0.0-alpha.10",
-      "@angular/platform-browser-dynamic": "npm:@angular/platform-browser-dynamic@^2.2.0",
-      "@angular/router": "npm:@angular/router@^3.2.4",
-      "@ngrx/core": "npm:@ngrx/core@^1.2.0",
-      "@ngrx/store": "npm:@ngrx/store@^2.2.1",
-      "@types/hammerjs": "npm:@types/hammerjs@^2.0.33",
-      "electron": "npm:electron@^1.4.10",
-      "electron-reload": "npm:electron-reload@^1.0.3",
-      "font-awesome": "npm:font-awesome@^4.7.0",
-      "fontawsome": "FortAwesome/Font-Awesome@^4.7.0",
-      "hammerjs": "npm:hammerjs@^2.0.8",
-      "reflect-metadata": "npm:reflect-metadata@^0.1.0"
-    },
-    "devDependencies": {
-      "babel": "npm:babel-core@^5.8.24",
-      "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "clean-css": "npm:clean-css@^3.4.3",
-      "core-js": "npm:core-js@^1.1.4",
-      "css": "systemjs/plugin-css@^0.1.32",
-      "http": "npm:jspm-nodelibs-http@^0.2.0",
-      "https": "npm:jspm-nodelibs-https@^0.2.0",
-      "module": "npm:jspm-nodelibs-module@^0.2.0",
-      "net": "npm:jspm-nodelibs-net@^0.2.0",
-      "socket.io-client": "npm:socket.io-client@^1.7.1",
-      "systemjs-hot-reloader": "capaj/systemjs-hot-reloader@^0.6.0",
-      "text": "systemjs/plugin-text@^0.0.9",
-      "ts": "frankwallis/plugin-typescript@^5.3.1",
-      "ts-runtime": "npm:babel-runtime@^5.8.24",
-      "tty": "npm:jspm-nodelibs-tty@^0.2.0",
-      "url": "npm:jspm-nodelibs-url@^0.2.0"
-    },
-    "overrides": {
-      "npm:@angular/common@2.2.0": {
-        "meta": {
-          "src/*.js": {
-            "deps": [
-              "reflect-metadata",
-              "zone.js"
-            ]
-          }
-        },
-        "map": {
-          "@angular/common": ".",
-          "./testing": "./bundles/common-testing.umd.js"
-        }
-      },
-      "npm:@angular/compiler@2.2.0": {
-        "meta": {
-          "src/*.js": {
-            "deps": [
-              "reflect-metadata",
-              "zone.js"
-            ]
-          }
-        },
-        "map": {
-          "@angular/compiler": ".",
-          "./testing": "./bundles/compiler-testing.umd.js"
-        }
-      },
-      "npm:@angular/core@2.2.0": {
-        "meta": {
-          "src/*.js": {
-            "deps": [
-              "reflect-metadata",
-              "zone.js"
-            ]
-          }
-        },
-        "map": {
-          "@angular/core": ".",
-          "./testing": "./bundles/core-testing.umd.js"
-        }
-      },
-      "npm:@angular/platform-browser-dynamic@2.2.0": {
-        "meta": {
-          "src/*.js": {
-            "deps": [
-              "reflect-metadata",
-              "zone.js"
-            ]
-          }
-        },
-        "map": {
-          "@angular/platform-browser-dynamic": ".",
-          "./testing": "./bundles/platform-browser-dynamic-testing.umd.js"
-        }
-      },
-      "npm:@angular/platform-browser@2.2.0": {
-        "meta": {
-          "src/*.js": {
-            "deps": [
-              "reflect-metadata",
-              "zone.js"
-            ]
-          }
-        },
-        "map": {
-          "@angular/platform-browser": ".",
-          "./testing": "./bundles/platform-browser-testing.umd.js"
-        }
-      },
-      "npm:debug@2.3.2": {
-        "main": "browser.js",
-        "jspmNodeConversion": false,
-        "format": "cjs",
-        "map": {
-          "./browser.js": {
-            "node": "./node.js"
-          },
-          "fs": "@node/fs",
-          "net": "@node/net",
-          "tty": "@node/tty",
-          "util": "@node/util"
-        }
-      },
-      "npm:ms@0.7.2": {
-        "jspmNodeConversion": false,
-        "format": "cjs"
-      },
-      "npm:typescript@2.1.1": {
-        "browser": {},
-        "map": {
-          "buffer": "@empty",
-          "child_process": "@empty",
-          "fs": "@empty",
-          "path": "@empty",
-          "process": "@empty",
-          "readline": "@empty"
-        },
-        "dependencies": {
-          "source-map-support": "*"
-        }
-      }
-    }
+    "plugin-typescript": "github:frankwallis/plugin-typescript",
+    "system-trace": "^0.2.7",
+    "systemjs": "^0.19.41",
+    "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader",
+    "systemjs-plugin-css": "github:systemjs/plugin-css",
+    "systemjs-plugin-text": "github:systemjs/plugin-text"
   }
 }
